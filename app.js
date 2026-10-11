@@ -638,22 +638,23 @@
     }
     // Заставка: Вернадский открывает книгу → начинаются главы. Тап по заставке — пропустить.
     const intro = $('#storyIntro');
+    const introWrap = $('#storyIntroWrap');
     const endIntro = () => {
-      if (!intro.classList.contains('on')) return;
-      intro.classList.remove('on'); intro.pause();
+      if (!introWrap.classList.contains('on')) return;
+      introWrap.classList.remove('on'); intro.pause();
       prev = -1; show(0);
     };
     intro.addEventListener('ended', endIntro);
-    intro.addEventListener('click', endIntro);
+    introWrap.addEventListener('click', endIntro);
     intro.addEventListener('error', endIntro);
     return {
       start: () => {
         $$('#storyBars span').forEach((s) => (s.className = ''));
-        intro.classList.add('on'); intro.currentTime = 0;
+        introWrap.classList.add('on'); intro.currentTime = 0;
         intro.play().catch(endIntro);
       },
       stop: () => {
-        intro.classList.remove('on'); intro.pause(); $$('#storyBars span').forEach((s) => (s.className = '')); setTimeout(() => { if (state.overlay !== 'history') stage.innerHTML = ''; }, 500); },
+        introWrap.classList.remove('on'); intro.pause(); $$('#storyBars span').forEach((s) => (s.className = '')); setTimeout(() => { if (state.overlay !== 'history') stage.innerHTML = ''; }, 500); },
     };
   })();
   hooks.history = story.start;

@@ -16,7 +16,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=35">
+  <link rel="stylesheet" href="styles.css?v=37">
 </head>
 <body>
 <div class="stage">
@@ -151,7 +151,10 @@
           <div class="story__body" id="storyBody"></div>
           <div class="story__tap story__tap--prev" id="storyPrev"></div>
           <!-- Заставка к истории: Вернадский открывает книгу (тап — пропустить) -->
-          <video class="story__intro" id="storyIntro" src="assets/video/history-intro.mp4" poster="assets/video/history-intro-first.jpg" muted playsinline preload="auto"></video>
+          <div class="story__intro" id="storyIntroWrap">
+            <video id="storyIntro" src="assets/video/history-intro.mp4" poster="assets/video/history-intro-first.jpg" muted playsinline preload="auto"></video>
+            <span class="story__intro-hint">Коснитесь, чтобы пропустить</span>
+          </div>
           <div class="story__tap story__tap--next" id="storyNext"></div>
         </section>
 
@@ -162,9 +165,9 @@
   </div>
 </div>
 
-<script src="content.js?v=35"></script>
-<script src="scenes.js?v=35"></script>
-<script src="live-tavrik.js?v=35"></script>
-<script src="app.js?v=35"></script>
+<script src="content.js?v=37"></script>
+<script src="scenes.js?v=37"></script>
+<script src="live-tavrik.js?v=37"></script>
+<script src="app.js?v=37"></script>
 </body>
 </html>
