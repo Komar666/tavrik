@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0c0708">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="copyright" content="© 2026 Команда проекта «Таврик». Все права защищены.">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Таврик">
+  <link rel="apple-touch-icon" href="assets/tavrik-head.webp">
+  <link rel="icon" href="assets/tavrik-head.webp">
+  <title>Таврик · прототип</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=35">
+</head>
+<body>
+<div class="stage">
+
+  <!-- Панель-гид: видна только на компьютере -->
+  <aside class="guide">
+    <div class="guide__brand">
+      <span class="medal"><img src="assets/tavrik-head.webp" alt=""></span>
+      <div>
+        <b>Таврик</b>
+        <span>прототип мобильного приложения</span>
+      </div>
+    </div>
+    <p class="guide__label">Экраны</p>
+    <div class="guide__nav" id="guideNav"></div>
+    <div class="guide__note">
+      <p class="guide__label">Как это будет на телефоне</p>
+      <h4 id="guideTitle"></h4>
+      <p id="guideText"></p>
+    </div>
+    <button class="guide__replay" id="replay">↻ Показать загрузку заново</button>
+  </aside>
+
+  <!-- Телефон -->
+  <div class="device-wrap">
+    <div class="device" id="device">
+      <div class="device__btn device__btn--a"></div>
+      <div class="device__btn device__btn--b"></div>
+      <div class="device__btn device__btn--c"></div>
+      <div class="screen-root" id="app">
+
+        <div class="statusbar">
+          <span class="statusbar__time" id="clock">9:41</span>
+          <span class="statusbar__island"></span>
+          <span class="statusbar__icons">
+            <svg viewBox="0 0 18 12"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5" width="3" height="7" rx="1"/><rect x="10" y="2.5" width="3" height="9.5" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg>
+            <svg viewBox="0 0 16 12"><path d="M8 2.5c2.3 0 4.4.9 6 2.4l1.2-1.3A10.3 10.3 0 0 0 8 .7 10.3 10.3 0 0 0 .8 3.6L2 4.9a8.6 8.6 0 0 1 6-2.4Zm0 3.6c1.3 0 2.5.5 3.4 1.3l1.2-1.3A6.6 6.6 0 0 0 8 4.3a6.6 6.6 0 0 0-4.6 1.8l1.2 1.3c.9-.8 2.1-1.3 3.4-1.3Zm0 3.5-1.9 2 1.9 1.9 1.9-1.9-1.9-2Z"/></svg>
+            <span class="battery"><i></i></span>
+          </span>
+        </div>
+
+        <!-- 1. ЗАГРУЗКА -->
+        <section class="screen splash" data-screen="splash">
+          <div class="splash__bg"></div>
+          <div class="splash__particles" id="particles"></div>
+          <div class="splash__halo"></div>
+          <div class="splash__brand"><img src="assets/crest-kfu.webp" alt="Герб КФУ"><span>КФУ им. В. И. Вернадского</span><i></i></div>
+          <img class="splash__mascot" src="assets/tavrik-fly.webp" alt="Таврик">
+          <div class="splash__flash"></div>
+          <div class="splash__title">
+            <h1 aria-label="ТАВРИК"><span>Т</span><span>А</span><span>В</span><span>Р</span><span>И</span><span>К</span></h1>
+            <p>твой помощник в жизни университета</p>
+          </div>
+          <div class="splash__loader">
+            <div class="splash__bar"><i></i></div>
+            <p id="splashTip"></p>
+          </div>
+        </section>
+
+        <!-- 2. ОНБОРДИНГ -->
+        <section class="screen onboarding" data-screen="onboarding">
+          <button class="onboarding__skip" data-action="finishOnboarding">Пропустить</button>
+          <div class="onboarding__track" id="obTrack">
+            <div class="ob-slide">
+              <div class="ob-slide__art"><span class="glow"></span><div class="live ob-live" id="obLive"></div></div>
+              <h2>Привет! Я&nbsp;<em>Таврик</em></h2>
+              <p>Золотой грифон КФУ. Знаю всё о жизни университета — и всегда на связи.</p>
+            </div>
+            <div class="ob-slide">
+              <div class="ob-slide__art"><span class="glow"></span><img src="assets/tavrik-phone.webp" alt=""></div>
+              <h2>Спроси <em>что угодно</em></h2>
+              <p>Пары, общежитие, стипендии, история вуза — отвечу за секунду, без очередей в деканат.</p>
+            </div>
+            <div class="ob-slide">
+              <div class="ob-slide__art"><span class="glow"></span><img src="assets/tavrik-name.webp" alt=""></div>
+              <h2>Твоя <em>группа</em></h2>
+              <p>Чтобы показывать твоё расписание, выбери группу:</p>
+              <div class="ob-groups" id="obGroups"></div>
+            </div>
+          </div>
+          <div class="onboarding__footer">
+            <div class="dots" id="obDots"><i class="on"></i><i></i><i></i></div>
+            <button class="btn-gold" id="obNext">Далее</button>
+          </div>
+        </section>
+
+        <!-- 3. ГЛАВНАЯ -->
+        <section class="screen tab-screen" data-screen="home">
+          <div class="scroll" id="homeScroll"></div>
+        </section>
+
+        <!-- 4. РАСПИСАНИЕ -->
+        <section class="screen tab-screen" data-screen="schedule">
+          <div class="scroll" id="scheduleScroll"></div>
+        </section>
+
+        <!-- 5. ОБЩЕЖИТИЯ -->
+        <section class="screen tab-screen" data-screen="dorm">
+          <div class="scroll" id="dormScroll"></div>
+        </section>
+
+        <!-- 6. СТИПЕНДИИ -->
+        <section class="screen tab-screen" data-screen="stipend">
+          <div class="scroll" id="stipendScroll"></div>
+        </section>
+
+        <!-- 7. ЧАТ -->
+        <section class="screen pushed chat" data-screen="chat">
+          <header class="chat__head">
+            <button class="icon-btn" data-action="back" aria-label="Назад"></button>
+            <span class="medal"><img src="assets/tavrik-head.webp" alt=""></span>
+            <div class="chat__who"><b>Таврик</b><span><i></i>онлайн · отвечает мгновенно</span></div>
+          </header>
+          <div class="chat__list" id="chatList"></div>
+          <div class="chat__bottom">
+            <div class="chips chips--scroll" id="chatChips"></div>
+            <form class="chat__input" id="chatForm" autocomplete="off">
+              <input id="chatInput" placeholder="Спроси Таврика…">
+              <button class="send" aria-label="Отправить"></button>
+            </form>
+          </div>
+        </section>
+
+        <!-- 8. ИСТОРИЯ (сторис) -->
+        <section class="screen modal story" data-screen="history">
+          <div class="story__stage" id="storyStage"></div>
+          <div class="story__shade"></div>
+          <div class="story__hero" id="storyHero"></div>
+          <div class="story__label" id="storyLabel"></div>
+          <div class="story__bars" id="storyBars"></div>
+          <button class="story__close" data-action="back" aria-label="Закрыть"></button>
+          <div class="story__body" id="storyBody"></div>
+          <div class="story__tap story__tap--prev" id="storyPrev"></div>
+          <!-- Заставка к истории: Вернадский открывает книгу (тап — пропустить) -->
+          <video class="story__intro" id="storyIntro" src="assets/video/history-intro.mp4" poster="assets/video/history-intro-first.jpg" muted playsinline preload="auto"></video>
+          <div class="story__tap story__tap--next" id="storyNext"></div>
+        </section>
+
+        <nav class="tabbar" id="tabbar"></nav>
+        <div class="home-indicator"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="content.js?v=35"></script>
+<script src="scenes.js?v=35"></script>
+<script src="live-tavrik.js?v=35"></script>
+<script src="app.js?v=35"></script>
+</body>
+</html>
